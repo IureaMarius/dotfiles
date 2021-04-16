@@ -15,7 +15,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
-Plug 'rip-rip/clang_complete'
 Plug 'vim-scripts/vim-compile'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
@@ -29,17 +28,28 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-
-
+Plug 'vim-scripts/guifontpp.vim'
 
 
 
 call plug#end()
-
-let g:syntastic_quiet_messages = { "type":"style" }
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set guifont=Lucida_Sans_Typewriter:h9:cANSI:qDRAFT
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_w = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['eslint']
 set incsearch	"search as characters are entered
 set hlsearch	"highlight matches
+set expandtab ts=4 sw=4 ai
 set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
 set expandtab	"tabs are spaces
 set number
 set cursorline	"show current line
