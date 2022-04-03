@@ -27,6 +27,7 @@
         "@typescript-eslint/no-empty-function": "off",
         "no-useless-escape": "off",
         "no-var": "off",
+        "no-global-assign": "off",
         "quotes": [
             "error",
             "single"
